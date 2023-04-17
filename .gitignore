@@ -4,9 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/dev/
-.idea/*
-!.idea/rcb-settings.xml
+/src/dev
+.idea
 
 # testing
 /coverage
