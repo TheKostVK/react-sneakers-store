@@ -1,6 +1,208 @@
 function App() {
     return (
         <div className="wrapper clear">
+
+            <div className="overlay">
+                <div className="drawer">
+
+                    <div className="cartHeader d-flex justify-between">
+                        <h2 className="mb-30">Корзина</h2>
+                        <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                             alt="Remove"/>
+                    </div>
+
+                    <div className="cartItems">
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                        <div className="cartItem d-flex align-center mb-20">
+
+                            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+                                 className="cartItemImg">
+
+                            </div>
+
+                            <div className="mr-20 flex">
+                                <p className="mb-5">
+                                    Мужские Кроссовки Nike Air Max 270
+                                </p>
+                                <b>
+                                    12 999 руб.
+                                </b>
+                            </div>
+                            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+                                 alt="Remove"/>
+                        </div>
+
+                    </div>
+
+
+                    <div className="cartTotalBlock">
+                        <ul>
+                            <li>
+                            <span>
+                                Итого:
+                            </span>
+                                <div>
+
+                                </div>
+                                <b>
+                                    21 482 руб.
+                                </b>
+                            </li>
+                            <li>
+                            <span>
+                                Налог 5%:
+                            </span>
+                                <div>
+
+                                </div>
+                                <b>
+                                    1 241 руб.
+                                </b>
+                            </li>
+                        </ul>
+
+                        <button className="cartOfferButton justify-center align-center d-flex">
+                            <p>Оформить заказ <img width={16} height={14} src="/img/ui/button/offerButton.svg"
+                                                   alt="Offer"/></p>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
             <header className="d-flex justify-between align-center p-40">
                 <div className="headerLeft d-flex align-center">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +218,7 @@ function App() {
                     </svg>
                     <div>
                         <h3>react Sneakers</h3>
-                        <p>Магазин лучших кроссовок</p>
+                        <p className="opacity-5">Магазин лучших кроссовок</p>
                     </div>
                 </div>
                 <ul className="d-flex">
@@ -51,10 +253,106 @@ function App() {
                 </ul>
             </header>
             <div className="content p-40">
-                <h1>Все кроссовки</h1>
-                <div>
-                    ....
+                <div className="d-flex align-center justify-between mb-40">
+                    <h1>Все кроссовки</h1>
+                    <div className="searchBlock">
+                        <img width={14} height={14} src="/img/ui/search/search.svg" alt="Search"/>
+                        <input placeholder="Поиск..."/>
+                    </div>
                 </div>
+
+                <div className="d-flex">
+                    <div className="card">
+                        <div className="favorite">
+                            <img width={32} height={32} src="/img/ui/button/unlikedButton.svg" alt="likeStatus"/>
+                        </div>
+                        <img width={133} height={112} src="/devStatic/img/sneakers/sneakersGreen.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <img width={133} height={112} src="/devStatic/img/sneakers/img.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Nike Air Max 270</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div className="card">
+                        <img width={133} height={112} src="/devStatic/img/sneakers/img_2.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Under Armour Curry 8</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div className="card">
+                        <img width={133} height={112} src="/devStatic/img/sneakers/img_3.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Nike Lebron XVIII Low</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div className="card">
+                        <img width={133} height={112} src="/devStatic/img/sneakers/img_4.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Nike Kyrie 7</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div className="card">
+                        <img width={133} height={112} src="/devStatic/img/sneakers/img_1.png" alt="sneakers"/>
+                        <h5>Мужские Кроссовки Nike Air Max 270</h5>
+                        <div className="d-flex justify-between align-center">
+                            <div className="d-flex flex-column">
+                                <span>Цена: </span>
+                                <b>12 999 руб.</b>
+                            </div>
+                            <button className="button">
+                                <img width={11} height={11} src="/img/ui/button/addFavoriteButton.svg" alt="plus"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
