@@ -6,17 +6,20 @@ import {useEffect, useState} from "react";
 
 export const Cart = ({items, cartItems, setCartOpened, delFromCart}) => {
 
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [totalTaxPrice, setTotalTaxPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState('');
+    const [totalTaxPrice, setTotalTaxPrice] = useState('');
 
     useEffect(() => {
-        const total = (items
+        const total = items
             .filter((item) => cartItems.includes(item.id))
             .map((obj) => obj.price)
-            .reduce((acc, price) => acc + price, 0)).toFixed(2);
-        const totalTax = (total / 100 * 5).toFixed(2)
-        setTotalPrice(total); // общая сумма цен
-        setTotalTaxPrice(totalTax);
+            .reduce((acc, price) => acc + price, 0);
+        const totalTaxAmount = +(total / 100 * 5).toFixed(2);
+        const formattedTotal = total.toLocaleString('ru-RU', {minimumFractionDigits: 2});
+        const formattedTotalTax = totalTaxAmount.toLocaleString('ru-RU', { minimumFractionDigits: 2 });
+
+        setTotalPrice(formattedTotal); // общая сумма цен
+        setTotalTaxPrice(formattedTotalTax);
 
     }, [cartItems]);
 
@@ -41,7 +44,7 @@ export const Cart = ({items, cartItems, setCartOpened, delFromCart}) => {
                                                 <CartItem
                                                     id={obj.id}
                                                     title={obj.title}
-                                                    price={(obj.price).toFixed(2)}
+                                                    price={(obj.price).toLocaleString('ru-RU', {minimumFractionDigits: 2})}
                                                     imageUrl={obj.imageUrl}
                                                     delFromCart={delFromCart}
                                                 />

@@ -60,10 +60,11 @@ function App() {
                     {
                         items.map((obj) => (
                             <Card
+                                key={obj.id}
                                 id={obj.id}
                                 title={obj.title}
                                 imageUrl={obj.imageUrl}
-                                price={(obj.price).toFixed(2)}
+                                price={(obj.price).toLocaleString('ru-RU', {minimumFractionDigits: 2})}
                                 cartItems={cartItems}
                                 favoriteItems={favoriteItems}
                                 addToCart={addToCart}
