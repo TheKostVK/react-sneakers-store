@@ -1,22 +1,27 @@
 import './CartItem.scss'
 
-export const CartItem = () => {
-    return (
-        <div className={`cartItem d-flex align-center mb-20`}>
+export const CartItem = ({id, title, price, imageUrl, delFromCart}) => {
 
-            <div style={{backgroundImage: "url(/devStatic/img/sneakers/img.png)"}}
+    const onClickRemove = () => {
+        delFromCart(id);
+    }
+
+    return (
+        <div key={id} className={`cartItem d-flex align-center mb-20`}>
+
+            <div style={{backgroundImage: `url(${imageUrl})`}}
                  className={`cartItemImg`}>
             </div>
 
             <div className="mr-20 flex">
                 <p className="mb-5">
-                    Мужские Кроссовки Nike Air Max 270
+                    {title}
                 </p>
                 <b>
-                    12 999 руб.
+                    {price} руб.
                 </b>
             </div>
-            <img className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
+            <img onClick={onClickRemove} className="removeBtn" width={32} height={32} src="/img/ui/button/removeButton.svg"
                  alt="Remove"/>
         </div>
     )
