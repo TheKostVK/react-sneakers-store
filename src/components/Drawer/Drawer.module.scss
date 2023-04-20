@@ -37,7 +37,24 @@
   .items {
     flex: 1;
     overflow: auto;
-    margin-bottom: 40px;
+
+    /* Скрыть бар */
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    /* Отобразить бар при наведении */
+    &:hover::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
   }
 
   h2 {
