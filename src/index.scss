@@ -8,21 +8,8 @@ body {
 
   /* Скрыть бар */
   &::-webkit-scrollbar {
-    background-color: white;
-    width: 8px;
-    height: 8px;
-  }
-
-  /* Отобразить бар при наведении */
-  &:hover::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  &:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
+    width: 0;
+    height: 0;
   }
 }
 
