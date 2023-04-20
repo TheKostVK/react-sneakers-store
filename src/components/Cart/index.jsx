@@ -10,10 +10,10 @@ export const Cart = ({items, cartItems, setCartOpened, delFromCart}) => {
     const [totalTaxPrice, setTotalTaxPrice] = useState('');
 
     useEffect(() => {
-        const total = items
+        const total = +(items
             .filter((item) => cartItems.includes(item.id))
             .map((obj) => obj.price)
-            .reduce((acc, price) => acc + price, 0);
+            .reduce((acc, price) => acc + price, 0));
         const totalTaxAmount = +(total / 100 * 5).toFixed(2);
         const formattedTotal = total.toLocaleString('ru-RU', {minimumFractionDigits: 2});
         const formattedTotalTax = totalTaxAmount.toLocaleString('ru-RU', { minimumFractionDigits: 2 });
@@ -21,7 +21,7 @@ export const Cart = ({items, cartItems, setCartOpened, delFromCart}) => {
         setTotalPrice(formattedTotal); // общая сумма цен
         setTotalTaxPrice(formattedTotalTax);
 
-    }, [cartItems]);
+    }, [items, cartItems]);
 
     return (
         <>
@@ -42,6 +42,7 @@ export const Cart = ({items, cartItems, setCartOpened, delFromCart}) => {
                                         items.filter((item) => cartItems.includes(item.id)).map((obj) => (
                                             <>
                                                 <CartItem
+                                                    key={obj.id}
                                                     id={obj.id}
                                                     title={obj.title}
                                                     price={(obj.price).toLocaleString('ru-RU', {minimumFractionDigits: 2})}

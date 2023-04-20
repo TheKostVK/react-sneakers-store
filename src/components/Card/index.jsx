@@ -53,7 +53,7 @@ export const Card = ({
 
 
     return (
-        <div className={style.card} key={id}>
+        <div className={style.card}>
             <div onClick={() => onClickButtonFavorite()} className={style.favorite}>
                 <img width={32} height={32}
                      src={`/img/ui/button/${

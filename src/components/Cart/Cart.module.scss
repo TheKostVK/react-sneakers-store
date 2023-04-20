@@ -1,6 +1,6 @@
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -30,13 +30,13 @@
     flex: 1;
     overflow: auto;
 
-    /* Скрыть скроллбар */
+    /* Скрыть бар */
     &::-webkit-scrollbar {
       width: 8px;
       height: 8px;
     }
 
-    /* Отобразить скроллбар при наведении */
+    /* Отобразить бар при наведении */
     &:hover::-webkit-scrollbar {
       width: 8px;
       height: 8px;

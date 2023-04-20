@@ -1,4 +1,3 @@
-
 import {Header, Card, Cart} from "./components/index";
 import {useEffect, useState} from "react";
 
@@ -8,6 +7,7 @@ function App() {
     const [items, setItems] = useState([]);
     const [cartItems, setCartItems] = useState([]);
     const [favoriteItems, setFavoriteItems] = useState([]);
+    const [searchValue, setSearchValue] = useState('');
 
     const [cartOpened, setCartOpened] = useState(false);
 
@@ -43,36 +43,39 @@ function App() {
 
     return (
         <div className="wrapper clear">
-            <Header setCartOpened={setCartOpened} />
+            <Header setCartOpened={setCartOpened}/>
             {
-                cartOpened ? <Cart setCartOpened={setCartOpened} items={items} cartItems={cartItems} delFromCart={delFromCart}/> : null
+                cartOpened ? <Cart setCartOpened={setCartOpened} items={items} cartItems={cartItems}
+                                   delFromCart={delFromCart}/> : null
             }
             <div className="content p-40">
                 <div className="d-flex align-center justify-between mb-40">
                     <h1>Все кроссовки</h1>
                     <div className="searchBlock">
                         <img width={14} height={14} src="/img/ui/search/search.svg" alt="Search"/>
-                        <input placeholder="Поиск..."/>
+                        <input onChange={event => setSearchValue(event.target.value)} placeholder="Поиск..."/>
                     </div>
                 </div>
 
-                <div className="d-flex flex-wrap">
+                <div className="d-flex flex-wrap cardList">
                     {
-                        items.map((obj) => (
-                            <Card
-                                key={obj.id}
-                                id={obj.id}
-                                title={obj.title}
-                                imageUrl={obj.imageUrl}
-                                price={(obj.price).toLocaleString('ru-RU', {minimumFractionDigits: 2})}
-                                cartItems={cartItems}
-                                favoriteItems={favoriteItems}
-                                addToCart={addToCart}
-                                delFromCart={delFromCart}
-                                addToFavorite={addToFavorite}
-                                delFromFavorite={delFromFavorite}
-                            />
-                        ))
+                        items
+                            .filter(obj => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
+                            .map(({ id, title, imageUrl, price }) => (
+                                <Card
+                                    key={id}
+                                    id={id}
+                                    title={title}
+                                    imageUrl={imageUrl}
+                                    price={price.toLocaleString('ru-RU', { minimumFractionDigits: 2 })}
+                                    cartItems={cartItems}
+                                    favoriteItems={favoriteItems}
+                                    addToCart={addToCart}
+                                    delFromCart={delFromCart}
+                                    addToFavorite={addToFavorite}
+                                    delFromFavorite={delFromFavorite}
+                                />
+                            ))
                     }
                 </div>
 
