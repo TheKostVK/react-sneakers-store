@@ -8,6 +8,8 @@ import AppContext from './context';
 import Home from './pages/Home';
 import Favorites from './pages/Favorites';
 import Orders from './pages/Orders';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAuthMe, selectIsAuth} from "./redux/slice/auth.js";
 
 function App() {
   const [items, setItems] = React.useState([]);
@@ -16,6 +18,15 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
   const [cartOpened, setCartOpened] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+
+
+  const dispatch = useDispatch();
+  const isAuth = useSelector(selectIsAuth);
+
+  React.useEffect(() => {
+    dispatch(fetchAuthMe());
+  }, [dispatch]);
+
 
   React.useEffect(() => {
     async function fetchData() {
@@ -102,9 +113,11 @@ function App() {
     return cartItems.some((obj) => Number(obj.parentId) === Number(id));
   };
 
+
   return (
       <AppContext.Provider
           value={{
+            isAuth,
             items,
             cartItems,
             favorites,
@@ -123,7 +136,7 @@ function App() {
               opened={cartOpened}
           />
 
-          <Header onClickCart={() => setCartOpened(true)} />
+          <Header onClickCart={() => setCartOpened(true)} isAuth={isAuth}/>
 
           <Routes>
             <Route path="/" element={<Home
