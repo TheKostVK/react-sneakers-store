@@ -20,6 +20,9 @@ function Card({
   const obj = { id, parentId: id, title, imageUrl, price };
 
   const onClickPlus = () => {
+    if (isItemAdded) {
+
+    }
     onPlus(obj);
   };
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '../components/Card';
-import AppContext from '../context';
+import Card from '../../components/Card';
+import AppContext from '../../context';
 
-function Favorites() {
+export const Favorites = () => {
   const { favorites, onAddToFavorite } = React.useContext(AppContext);
 
   return (
@@ -19,5 +19,3 @@ function Favorites() {
     </div>
   );
 }
-
-export default Favorites;

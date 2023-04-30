@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Card from '../components/Card';
+import Card from '../../components/Card';
 
-function Home({
+export const Home = ({
   items,
   searchValue,
   setSearchValue,
@@ -10,7 +10,7 @@ function Home({
   onAddToFavorite,
   onAddToCart,
   isLoading,
-}) {
+}) =>  {
   const renderItems = () => {
     const filteredItems = items.filter((item) =>
       item.title.toLowerCase().includes(searchValue.toLowerCase()),
@@ -48,4 +48,3 @@ function Home({
   );
 }
 
-export default Home;
