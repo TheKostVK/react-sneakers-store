@@ -8,7 +8,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {Navigate} from "react-router-dom";
 
 import styles from "./Login.module.scss";
-import {fetchAuth, selectIsAuth} from "../../redux/slices/auth";
+import {fetchAuth, selectIsAuth} from "../../redux/slice/auth";
+
 export const Login = () => {
     const isAuth = useSelector(selectIsAuth);
     const dispatch = useDispatch();
@@ -62,6 +63,7 @@ export const Login = () => {
                     Войти
                 </Button>
             </form>
+            <Button size="large" fullWidth href={'/registration'}>Нет аккаунта?</Button>
         </Paper>
     );
 };

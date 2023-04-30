@@ -1,33 +1,18 @@
 import React, { useState } from "react";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 
 import styles from "./Profile.module.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Post } from "../../components/Post";
-import { logout, selectIsAuth } from "../../redux/slices/auth";
+import { logout, selectIsAuth } from "../../redux/slice/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-import {fetchUserPosts} from "../../redux/slices/posts";
 
 
 export const Profile = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
-  const userPosts  = useSelector((state) => state.userPosts);
   const userData = useSelector(state => state.auth.data);
-
-  const isPostsLoading = userPosts && (userPosts.status === "loading" || true);
-
-  // React.useEffect(() => {
-  //   if (userData && userData._id) {
-  //     dispatch(fetchUserPosts(userData._id));
-  //   }
-  // }, [userData]);
 
 
   if (!isAuth) {

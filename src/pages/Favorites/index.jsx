@@ -1,9 +1,17 @@
 import React from 'react';
 import Card from '../../components/Card';
 import AppContext from '../../context';
+import {useSelector} from "react-redux";
+import {selectIsAuth} from "../../redux/slice/auth";
+import {Navigate} from "react-router-dom";
 
 export const Favorites = () => {
   const { favorites, onAddToFavorite } = React.useContext(AppContext);
+    const isAuth = useSelector(selectIsAuth);
+
+    if (!isAuth) {
+        return <Navigate to={"/login"} />;
+    }
 
   return (
     <div className="content p-40">

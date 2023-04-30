@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 
 import styles from "./Login.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchRegistration, selectIsAuth } from "../../redux/slices/auth";
+import { fetchRegistration, selectIsAuth } from "../../redux/slice/auth";
 import { Navigate } from "react-router-dom";
 import axios from "../../axios";
 
@@ -81,19 +81,19 @@ export const Registration = () => {
         Создание аккаунта
       </Typography>
       <div className={styles.avatar}>
-        <img style={{ width: 100, height: 100 }} className={styles.avatar} src={avatarUrl || "/noavatar.png"}
+        <img style={{ width: 100, height: 100 }} className={styles.avatar} src={avatarUrl || "/img/ui/profile/noavatar.png"}
              alt="Аватар" />
       </div>
-      <div className={styles.avatar}>
+      <div>
         {avatarUrl ? (
           <>
-            <Button variant="contained" color="error" onClick={onClickRemoveImage}>
+            <Button className="mb-20" variant="contained" color="error" onClick={onClickRemoveImage} fullWidth>
               Удалить
             </Button>
           </>
         ) : (
           <>
-            <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="small">
+            <Button className="mb-20" onClick={() => inputFileRef.current.click()} variant="contained" size="small" fullWidth>
               Загрузить аватар
             </Button>
             <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden />
@@ -126,6 +126,7 @@ export const Registration = () => {
       <Button onClick={onSubmit} type="submit" size="large" variant="contained" fullWidth>
         Зарегистрироваться
       </Button>
+      <Button size="large" fullWidth href={'/login'}>Есть аккаунт?</Button>
     </Paper>
   );
 };

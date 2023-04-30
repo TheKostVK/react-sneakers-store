@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Drawer from './components/Drawer';
 import AppContext from './context';
 
-import {Home, Favorites, Orders} from './pages/';
+import {Home, Favorites, Orders, Profile, Login, Registration} from './pages/';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAuthMe, selectIsAuth} from "./redux/slice/auth.js";
 
@@ -148,8 +148,13 @@ function App() {
                 onAddToCart={onAddToCart}
                 isLoading={isLoading}
             />} />
+
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/orders" element={<Orders />} />
+
           </Routes>
         </div>
       </AppContext.Provider>
