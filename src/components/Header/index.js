@@ -5,7 +5,7 @@ import {useCart} from '../../hooks/useCart';
 import {useSelector} from "react-redux";
 import {selectIsAuth} from "../../redux/slice/auth";
 
-function Header({onClickCart}) {
+export const Header = ({onClickCart}) => {
     const {totalPrice} = useCart();
     const isAuth = useSelector(selectIsAuth);
     const userData = useSelector(state => state.auth.data);
@@ -50,5 +50,3 @@ function Header({onClickCart}) {
         </header>
     );
 }
-
-export default Header;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../components/Card';
+import {Card} from '../../components/Card';
 import AppContext from '../../context';
 import {useSelector} from "react-redux";
 import {selectIsAuth} from "../../redux/slice/auth";

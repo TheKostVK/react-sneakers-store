@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
-import Header from './components/Header';
-import Drawer from './components/Drawer';
+import {Header} from './components/Header';
+import {Drawer} from './components/Drawer';
 import AppContext from './context';
 
 import {Home, Favorites, Orders, Profile, Login, Registration} from './pages/';
